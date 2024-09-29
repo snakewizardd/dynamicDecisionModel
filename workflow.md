@@ -1,3 +1,7 @@
+# Note 
+
+This markdown represents the implementation our of DDM algorithm in practice. It is just ONE SAMPLE run, but shows the process of the algorithm in real time, assisted by LLM generation.
+
 ![Alt text for the image](./sampleOutputs/runDiagram.png)
 
 ____
