@@ -1,6 +1,6 @@
 # Dynamic Decision-Making Model
 
-![Alt text for the image](./sampleOutputs/modelWorkflowImg.png)
+![The general algorithm workflow](./sampleOutputs/modelWorkflowImg.png)
 
 
 A dynamic decision-making model that incorporates various factors influencing choice and goal attainment over time:
