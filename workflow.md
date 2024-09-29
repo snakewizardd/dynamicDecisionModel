@@ -273,4 +273,43 @@ Develop targeted dynamic decision-making software based on defined use cases uti
 
 # New Goal Declared 
 
-Develop targeted dynamic decision-making software based on defined use cases utilizing Postgres, OpenAI API, and agent workflows
+Develop user-centered dynamic decision-making software based on well-defined use cases, leveraging Postgres, OpenAI API, and agent workflows, while incorporating iterative feedback for continuous improvement.
+
+# New Full Information Vector 
+
+
+-  Goal: Develop user-centered dynamic decision-making software based on well-defined use cases, leveraging Postgres, OpenAI API, and agent workflows, while incorporating iterative feedback for continuous improvement.
+
+-  Information: I'm planning on using Postgres to store/read the data 
+
+    I'm planning on using openAI API but via an agent workflow. I can set up my pre programmed agents with Flowise, then each one gets it own dedicated endpoint 
+
+    I usually write up my programs in R, stitching it all together
+
+    Theory behind the plan: 
+    A dynamic decision-making model that incorporates various factors influencing choice and goal attainment over time
+
+    - 𝐹_𝑛= 𝑃_0∗𝑘𝐹_(𝑛−1)+𝑚(𝑇(𝑓(𝐼_𝑛,𝐼_Δ ))+𝑅(𝐷_𝑛,〖𝐹𝑀〗_𝑛 ))
+    - 𝐹_𝑛 = Choice Taken
+    - 𝑃_0 = Initial Goal
+    - 𝑘𝐹_(𝑛−1) = effect of previous moment on the Declared Goal
+    - 𝑚 = a rate vector (time, etc.)
+    - 𝐼_𝑛 = the original factual information
+    - 𝐼_Δ = facts acquired throughout the process
+    - 𝐷_𝑛 = a potential choice (vector of choices)
+    - 〖𝐹𝑀〗_𝑛 = Subjective and Objective assessments performed on 𝐷_𝑛 , considering 𝑃_0∗𝑘𝐹_(𝑛−1), 𝐼_𝑛 , 𝐼_Δ , 𝑇(𝑓(𝐼_𝑛,𝐼_Δ ))
+    - 𝑅(𝐷_𝑛,〖𝐹𝑀〗_𝑛 ) = 𝐼_Δ  + 𝑇(𝑓(𝐼_Δ )) = Information Gained from choosing process
+
+- Choice Taken In Past: Define specific use cases for dynamic decision-making.
+
+- Difference Vector From Choice: 
+    - Before choosing: The initial state involved a broad range of potential choices which encompassed the entire development process of the software, from setting up a Postgres database schema to ensuring compliance with data regulations. Each choice had its own subjective and objective assessments accounting for importance, impact, and strategic relevance. There was a focus on methodologies, integrations, and the development workflow thoroughly analyzing how different aspects contribute to the primary goal of building the software. 
+    - After choosing: The decision to define specific use cases for dynamic decision-making refines the focus of the project, establishing a direction and clarity for purpose and target audience. This choice provides a functional baseline for the software, ensuring that subsequent efforts align with user needs, enhancing the applicability and relevance of all integrated components in the development pipeline, while simplifying further assessments of remaining choices in the context of user-centric requirements.'
+
+- Second Choice Taken:  Establish feedback loops to incorporate user input on decision outcomes.
+
+- Difference Vector From Second Choice: 
+
+    - Before choosing: The initial state involved a broad range of potential choices which encompassed the entire development process of the software, from setting up a Postgres database schema to ensuring compliance with data regulations. Each choice had its own subjective and objective assessments accounting for importance, impact, and strategic relevance. There was a focus on methodologies, integrations, and the development workflow, thoroughly analyzing how different aspects contribute to the primary goal of building the software. 
+
+    - After choosing: The decision to establish feedback loops to incorporate user input on decision outcomes refines the focus of the project, enhancing user engagement and satisfaction, thereby improving the software’s relevance and utility. This choice aids in creating a systematic method for continuous improvement, aligning iterations with user needs and expectations, while simplifying further assessments of other choices within a user-centric framework.
