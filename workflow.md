@@ -1,4 +1,24 @@
+```mermaid
+flowchart TD
+    A[Define New Goal] --> B[Gather Fresh Information]
+    B --> C[Generate Potential Choices]
+    C --> D[Evaluate Choices]
+    D --> E[Declare Choice Taken]
+    E --> F[Note Differences in State Pre-and Post-Decision]
+    F -->|Feedback| B
 
+    subgraph Variables
+        P0["P0: Initial Goal"]
+        kF["kF(n−1): Influence of Past Decisions"]
+        I_n["I_n: New Information Gathered"]
+        I_Δ["I_Δ: Changes in Information over Time"]
+    end
+
+    %% Connect variables to the process
+    A --> P0
+    B --> I_n & I_Δ
+    C --> kF
+```
 ____
 # Original Goal
 Develop a piece of software for which I already have a mental idea and a stack plan 

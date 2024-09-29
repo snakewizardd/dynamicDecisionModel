@@ -1,26 +1,7 @@
 # Dynamic Decision-Making Model
 
-```mermaid
-flowchart TD
-    A[Define New Goal] --> B[Gather Fresh Information]
-    B --> C[Generate Potential Choices]
-    C --> D[Evaluate Choices]
-    D --> E[Declare Choice Taken]
-    E --> F[Note Differences in State Pre-and Post-Decision]
-    F -->|Feedback| B
+![Alt text for the image](./sampleOutputs/modelWorkflowImg.png)
 
-    subgraph Variables
-        P0["P0: Initial Goal"]
-        kF["kF(n−1): Influence of Past Decisions"]
-        I_n["I_n: New Information Gathered"]
-        I_Δ["I_Δ: Changes in Information over Time"]
-    end
-
-    %% Connect variables to the process
-    A --> P0
-    B --> I_n & I_Δ
-    C --> kF
-```
 
 A dynamic decision-making model that incorporates various factors influencing choice and goal attainment over time:
 
