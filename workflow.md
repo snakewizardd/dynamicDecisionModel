@@ -21,7 +21,7 @@ flowchart TD
     B --> I_n & I_Δ
     C --> kF
 ```
-```
+```mermaid
 flowchart TD
     A1[Step 1: Develop Software Idea] --> B1[Gather Information]
     B1 --> C1[Generate Potential Choices]
