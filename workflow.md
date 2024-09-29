@@ -1,3 +1,5 @@
+# Flow 
+
 ```mermaid
 flowchart TD
     A[Define New Goal] --> B[Gather Fresh Information]
@@ -18,6 +20,46 @@ flowchart TD
     A --> P0
     B --> I_n & I_Δ
     C --> kF
+```
+```
+flowchart TD
+    A1[Step 1: Develop Software Idea] --> B1[Gather Information]
+    B1 --> C1[Generate Potential Choices]
+    C1 --> D1[Evaluate Choices]
+    D1 --> E1[Declare Choice Taken: Define specific use cases]
+    E1 --> F1[Note Differences from Step 1 to Step 2]
+
+    A2[Step 2: Define Specific Use Cases] --> B2[Gather Updated Information]
+    B2 --> C2[Generate New Potential Choices]
+    C2 --> D2[Evaluate New Choices]
+    D2 --> E2[Declare Choice Taken: Establish feedback loops]
+    E2 --> F2[Note Differences from Step 2 to Step 3]
+
+    A3[Step 3: Develop User-Centered Software] --> B3[Gather Finalized Information]
+    B3 --> C3[Generate Final Potential Choices]
+    C3 --> D3[Evaluate Final Choices]
+    D3 --> E3[Declare Choice Taken: Develop iterative feedback process]
+    E3 --> F3[Note Differences from Step 3 to End]
+
+    %% Feedback loops
+    E1 -->|Feedback| B2
+    E2 -->|Feedback| B3
+
+    %% Illustrating Variables
+    subgraph Variables
+        P0["P0: Initial Goal"]
+        kF1["kF(n−1) influences P0 in Step 2"]
+        kF2["kF(n−1) influences P0 in Step 3"]
+        I_n1["I_n: Information for Step 1"]
+        I_n2["I_n: Updated Information for Step 2"]
+        I_n3["I_n: Final Information for Step 3"]
+    end
+
+    %% Connect variables to the decision process
+    A1 --> P0
+    B1 --> I_n1
+    B2 --> I_n2
+    B3 --> I_n3
 ```
 ____
 # Original Goal
