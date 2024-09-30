@@ -1,6 +1,8 @@
 library(dplyr)
 library(jsonlite)
 library(httr)
+library(readr)
+
 
 #Add the user generated message to the message qeue
 addUserMessage <- function(userMessage){
@@ -14,10 +16,7 @@ addUserMessage <- function(userMessage){
 pingAPI <- function(userInputMessage,
                     agentType
 ){
-  
-  #url <- "https://api.openai.com/v1/chat/completions"
-  #url <- "https://api.groq.com/openai/v1/chat/completions"
-  
+    
   url <- switch(agentType,
                 "Semantic" = "http://localhost:3000/api/v1/prediction/d620d45d-750a-45b7-9900-4bc9ac13e72c",
                 "GoalGenerator"    = "http://localhost:3000/api/v1/prediction/92502b56-bde9-48c6-9cd4-7fa563666e99",
@@ -28,22 +27,14 @@ pingAPI <- function(userInputMessage,
                 "http://localhost:3000/api/v1/prediction/d620d45d-750a-45b7-9900-4bc9ac13e72c" # default case
   )
   
-  #url <- "http://localhost:3000/api/v1/prediction/d620d45d-750a-45b7-9900-4bc9ac13e72c"
-  
-  #apiKey <- importedAPIKey
-  #apiKey <-  groqKey
   
   body <- list(
-    #model = "gpt-3.5-turbo",
-    #model = "llama3-70b-8192",
-    #model = "mixtral-8x7b-32768",
     question = userInputMessage
-    #messages=messages
   )
   
   response <- POST(
     url,
-    add_headers(#`Authorization` = paste("Bearer", apiKey),
+    add_headers(
       `Content-Type`="application/json"),
     body = body,
     encode = "json"
@@ -53,8 +44,7 @@ pingAPI <- function(userInputMessage,
   
   aiResponseFormatted<- list(
     role = "assistant",
-    content = #content(response)$choices[[1]]$message$content
-      content(response)$text
+    content = content(response)$text
   )
   
   messages[[length(messages) + 1]] <<- aiResponseFormatted
@@ -64,9 +54,9 @@ pingAPI <- function(userInputMessage,
 
 reset_messages <- function(){
 
-messages <<- list(
-  list(role = "system", content = "")
-)
+  messages <<- list(
+    list(role = "system", content = "")
+  )
 }
 
 performFirstRun <- function(pnull,I1){
@@ -131,23 +121,6 @@ performFirstRun <- function(pnull,I1){
   addUserMessage(userMessage = goalReAnalyzeMessage)
   pingAPI(userInputMessage = goalReAnalyzeMessage,agentType = 'GoalReAnalyzer')
   
-  # newFullInformationVector <- c(paste0('Original Goal and Information: ',messages[[2]]$content),
-  #                             paste0('Choice Made: ',messages[[9]]$content),
-  #                             paste0('Difference Vector after Choice Made: ',messages[[11]]$content),
-  #                             paste0('Semantic Difference Vector after Choice Made: ',messages[[13]]$content),
-  #                             paste0('New Goal Declared: ',messages[[15]]$content)
-  #   )
-  
-  #######
-  # InformationVector <- c(paste0('Original Goal and Information: ',messages[[2]]$content),
-  #                       paste0('Choice Made: ',messages[[9]]$content),
-  #                       paste0('Difference Vector after Choice Made: ',messages[[11]]$content),
-  #                       paste0('Semantic Difference Vector after Choice Made: ',messages[[13]]$content),
-  #                       paste0('New Goal Declared: ',messages[[15]]$content)
-  # )
-  #newGoal <- paste0('New Goal: ',messages[[15]]$content)
-  
-  #newState <- c(newGoal,'AND FOR CONTEXT: ', InformationVector)
   
   iterationRow <<- data.frame(n = 1,
                               pnull = pnull, I1 = I1, TransformI = messages[[3]]$content,
@@ -173,33 +146,6 @@ performFirstRun <- function(pnull,I1){
   
 }
 
-#############################
-reset_messages()
-
-performFirstRun(pnull='Successfuly conduct the Design-Build-Team for generating a mission statement',
-                I1 = paste0('We only have three weeks',
-                            'Its been a difficult restructuring',
-                            'I personally have moved from a 3 person team to 45 people', sep = ' '))
-
-# iterationRow[1,'pnull']
-# iterationRow[1,'I1']
-# iterationRow[1,'D']
-# iterationRow[1,'Fn']
-# iterationRow[1,'Idelta']
-# iterationRow[1,'TIdelta']
-# iterationRow[1,'newP']
-
-InfoRow <- rbind(data.frame(Type= 'Original Goal',Row = paste0('Old Goal: ',iterationRow[1,'pnull'])),
-data.frame(Type= 'Original Information',Row = paste0('Original Information: ',iterationRow[1,'I1'])),
-data.frame(Type= 'Choices Considered',Row = paste0('Choices Considered: ',iterationRow[1,'D'])),
-data.frame(Type= 'Choice Chosen',Row = paste0('Choice Chosen: ',iterationRow[1,'Fn'])),
-data.frame(Type= 'New Information From Run',Row = paste0('New Information From Run: ',iterationRow[1,'Idelta'])))
-
-#buffer <- 'THE FOLLOWING IS OLD DATA FOR CONTEXT, IT IS FOLLOWED BY A NEWLY DECLARED GOAL'
-
-#newInformationContext <- c(buffer,InfoRow$Row,iterationRow[1,'newP'])
-#########
-
 processAdditionalRuns <- function(i){
   
   reset_messages()
@@ -219,8 +165,12 @@ processAdditionalRuns <- function(i){
   
   previousChoices <- InfoRow %>% filter(Type == 'Choice Chosen')
   choiceDisclaimer<- paste0('The choice cannot include ',c(previousChoices$Row))
+  
+  choiceDisclaimer2 <- "You may not reply 'None'. If you think there are no choices, then be 
+  more creative in line with the themes and goals already stated to come up with a better answer than simply None."
+  
   goalMessage <- c(messages[[2]]$content,paste0('Semantic Keywords: ',messages[[3]]$content),
-                   choiceDisclaimer)
+                   choiceDisclaimer, choiceDisclaimer2, sep= ' ')
   
   
   addUserMessage(userMessage = goalMessage)
@@ -244,7 +194,10 @@ processAdditionalRuns <- function(i){
   
   
   disclaimerDifferenceVector <- paste0('Please only consider the impact of the most recent choice made which is ',
-                                      messages[[9]]$content)
+                                       messages[[9]]$content)
+  
+  disclaimerDifferenceVector <- paste0('Please also consider in the background that there have been already a series of choices made',
+                                       c(previousChoices$Row))
   
   differenceVectorMessage <- c(messages[[2]]$content,
                                paste0('Semantic Keywords: ',messages[[3]]$content),
@@ -268,7 +221,7 @@ processAdditionalRuns <- function(i){
   pingAPI(userInputMessage = semanticDifferenceVectorMessage,agentType = 'Semantic')
   
   
- 
+  
   
   disclaimerGoalReanalyze <- 'Remember that the choice has already been taken, so the goal
   should adjust itself based on the choice made and the differences. You can adjust the goal
@@ -288,24 +241,7 @@ processAdditionalRuns <- function(i){
   addUserMessage(userMessage = goalReAnalyzeMessage)
   pingAPI(userInputMessage = goalReAnalyzeMessage,agentType = 'GoalReAnalyzer')
   
-  # newFullInformationVector <- c(paste0('Original Goal and Information: ',messages[[2]]$content),
-  #                             paste0('Choice Made: ',messages[[9]]$content),
-  #                             paste0('Difference Vector after Choice Made: ',messages[[11]]$content),
-  #                             paste0('Semantic Difference Vector after Choice Made: ',messages[[13]]$content),
-  #                             paste0('New Goal Declared: ',messages[[15]]$content)
-  #   )
-  
-  #######
-  # InformationVector <- c(paste0('Original Goal and Information: ',messages[[2]]$content),
-  #                       paste0('Choice Made: ',messages[[9]]$content),
-  #                       paste0('Difference Vector after Choice Made: ',messages[[11]]$content),
-  #                       paste0('Semantic Difference Vector after Choice Made: ',messages[[13]]$content),
-  #                       paste0('New Goal Declared: ',messages[[15]]$content)
-  # )
-  #newGoal <- paste0('New Goal: ',messages[[15]]$content)
-  
-  #newState <- c(newGoal,'AND FOR CONTEXT: ', InformationVector)
-  #i <- 2
+
   iterationRow[i,'TransformI'] <- messages[[3]]$content
   iterationRow[i,'D'] <- messages[[5]]$content
   iterationRow[i,'FM'] <- messages[[7]]$content
@@ -313,9 +249,7 @@ processAdditionalRuns <- function(i){
   iterationRow[i,'Idelta'] <- messages[[11]]$content
   iterationRow[i,'TIdelta'] <- messages[[13]]$content
   iterationRow[i,'newP'] <- messages[[15]]$content
-  
-  #iterationRow <<- rbind(iterationRow,newRow)
-  
+    
   newRow <<- data.frame(n = i+1,
                         pnull = iterationRow[i,'newP'], 
                         I1 = paste0(iterationRow[i,'I1'],iterationRow[i,'Idelta']) , 
@@ -331,23 +265,43 @@ processAdditionalRuns <- function(i){
   
   
   InfoNewRow <- rbind(data.frame(Type= 'Goal For Run',Row = paste0('Goal For Run: ',iterationRow[i,'pnull'])),
-                   data.frame(Type= 'Information For Run',Row = paste0('Information For Run: ',iterationRow[i,'I1'])),
-                   data.frame(Type= 'Choices Considered',Row = paste0('Choices Considered: ',iterationRow[i,'D'])),
-                   data.frame(Type= 'Choice Chosen',Row = paste0('Choice Chosen: ',iterationRow[i,'Fn'])),
-                   data.frame(Type= 'New Information From Run',Row = paste0('New Information From Run: ',iterationRow[i,'Idelta'])))
+                      data.frame(Type= 'Information For Run',Row = paste0('Information For Run: ',iterationRow[i,'I1'])),
+                      data.frame(Type= 'Choices Considered',Row = paste0('Choices Considered: ',iterationRow[i,'D'])),
+                      data.frame(Type= 'Choice Chosen',Row = paste0('Choice Chosen: ',iterationRow[i,'Fn'])),
+                      data.frame(Type= 'New Information From Run',Row = paste0('New Information From Run: ',iterationRow[i,'Idelta'])))
   
   InfoRow <<- rbind(InfoRow,InfoNewRow)
   
-
+  
   
 }
 
+#############################
+reset_messages()
+
+performFirstRun(pnull='I want to take over the world',
+                I1 = paste0("Information: 
+                I am an individual of immense conviction, driven by a relentless desire for order and progress. My mind is sharp, analytical, and often uncompromising; I thrive on clear objectives and challenge myself and others to exceed expectations. I hold a deep-seated belief in the power of collective strength, valuing loyalty and discipline above all. My passion can ignite others, yet my intensity may sometimes intimidate those around me. I approach every situation with a boldness that reflects my unwavering commitment to my ideals, often seeking to rally those who share my vision while inspiring them to embrace their own potential. Beneath this robust exterior lies a complexity, a mind that constantly analyzes the world around me, ever seeking impact and significance in every action I take.",sep = ' '))
+
+
+InfoRow <- rbind(data.frame(Type= 'Original Goal',Row = paste0('Old Goal: ',iterationRow[1,'pnull'])),
+data.frame(Type= 'Original Information',Row = paste0('Original Information: ',iterationRow[1,'I1'])),
+data.frame(Type= 'Choices Considered',Row = paste0('Choices Considered: ',iterationRow[1,'D'])),
+data.frame(Type= 'Choice Chosen',Row = paste0('Choice Chosen: ',iterationRow[1,'Fn'])),
+data.frame(Type= 'New Information From Run',Row = paste0('New Information From Run: ',iterationRow[1,'Idelta'])))
+
+#########
 for(i in 2:5){
   
   processAdditionalRuns(i = i)
   
-  
 }
 
 
+reducedMatrix <- iterationRow %>% 
+  select(n,pnull,Fn,Idelta) %>% 
+  unique()
+
+write_csv(reducedMatrix,'./sampleOutputs/reducedResultsExample.csv')
+write_csv(iterationRow,'./sampleOutputs/fullResultsExample.csv')
 
