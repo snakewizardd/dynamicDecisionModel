@@ -2,17 +2,17 @@ library(httr)
 library(jsonlite)
 library(dotenv)
 load_dot_env("./.env")
-
-
-
 # Define API key and endpoint
-api_key <- Sys.getenv("GROQ_API_KEY")
+#api_key <- Sys.getenv("GROQ_API_KEY")
 
-url <- "http://localhost:3000/api/v1/prediction/095ead8d-54fa-4b43-bd42-da04f06ad25a"
 
-original_goal <- "I want to get a job in machine learning"
-original_information <- "I am a full stack engineer for 6 years"
 
+
+initialize_first_iteration <- function(original_goal,original_information){
+
+  url <- "http://localhost:3000/api/v1/prediction/095ead8d-54fa-4b43-bd42-da04f06ad25a"
+  
+  
 payload <- list(
   question = paste0("Original Goal- ",original_goal, "+ ", "Original Information- ", original_information) )
 
@@ -235,6 +235,10 @@ decision_log <- rbind(decision_log, copy)
 
 
 toJSON(decision_log,pretty=TRUE)
+
+return(decision_log)
+
+}
 
 
 ##################################
@@ -480,8 +484,21 @@ createNewRow <- function(i){
 #newEmptyRow <- createNewRow(2)
 
 #decision_log <- rbind(decision_log,newEmptyRow )
+original_goal <- "I want to build the most immersive, mind-bending escape room experience that blends AI, live actors, and psychological storytelling to make players question reality itself."
+original_information <- "Initial Information Vector:
+Game Design Knowledge: Knows general puzzle design but never built an escape room
+AI Skills: Some experience with LLMs and generative AI but never integrated into a physical experience
+Storytelling Ability: Loves psychological thrillers but hasn’t written an interactive narrative before
+Resources: Access to a garage space, a few Raspberry Pis, and an old VR headset
+Constraints: Limited budget, no experience running a business, no existing audience
+Inspiration: Obsessed with Black Mirror, immersive theater, and AI-driven NPCs
+Networking: Has a few friends in theater and tech but not deep industry connections"
+  
+decision_log <- initialize_first_iteration(original_goal = original_goal,
+                                           original_information = original_information)
 
-n <- 5
+
+n <- 20
 
 for(i in 2:n){
   
@@ -494,3 +511,5 @@ for(i in 2:n){
   decision_log <- rbind(decision_log,newEmptyRow )
   
 }
+
+readr::write_csv(decision_log,'gemini-test2.csv')
