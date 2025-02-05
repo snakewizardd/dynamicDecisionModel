@@ -1,0 +1,178 @@
+iteration,original_goal,adjusted_goal,information_vector,choices_for_step,subjective_feedback,objective_feedback,choice_chosen,new_information_vector,new_goal
+1,become a crypto billionare,N/A yet,i have 35$ to my name and i live in sub saharan africa under a shed with no internet,"Okay, I understand. My goal is to become a crypto billionaire starting with $35 and living in Sub-Saharan Africa with no internet access. I will only respond with a vector of choices based on the information provided and my analysis.
+
+Okay, I'm ready. Ask me something!
+","Okay, great! Considering your limited resources and lack of internet access, what are some immediate steps you can take to increase your starting capital, even if it's just by a little? Remember, you need options that don't rely on online access.
+","Okay, great! So, given my situation, what should my absolute first step be to start on this (very ambitious) journey? Remember, I have $35, live in Sub-Saharan Africa under a shed with no internet, and my goal is to become a crypto billionaire. What's the most realistic thing I can do *right now* to begin?
+","c('Increase your starting capital through local, offline opportunities.')
+","I will focus on offline opportunities to increase my starting capital.
+","c('Research viable local opportunities for small income generation.')
+"
+2,become a crypto billionare,"c('Research viable local opportunities for small income generation.')
+","i have 35$ to my name and i live in sub saharan africa under a shed with no internetI will focus on offline opportunities to increase my starting capital.
+","```
+c('Barter goods or services for essential needs, saving cash.', 'Learn a valuable trade or skill that is in demand locally.', 'Seek out micro-loan opportunities to fund a small business.')
+```","Okay, hello! It's great to be talking with you. I understand you're in a tough spot right now, living in sub-Saharan Africa, under a shed with no internet and only $35. My current goal is to help you find viable local opportunities to generate some income. Given your situation, we're focusing on offline options to build your capital. I've identified three potential paths:
+
+1.  **Barter goods or services for essential needs, saving cash.** This is about leveraging what you already have to reduce expenses and hold onto your limited funds.
+2.  **Learn a valuable trade or skill that is in demand locally.** This is a longer-term investment in your future income potential.
+3.  **Seek out micro-loan opportunities to fund a small business.** This could provide a jumpstart if you can identify a suitable business idea.
+
+Which of these options sounds most appealing to you initially, or do you have any initial thoughts or concerns about them? Perhaps we can brainstorm some specific examples within each category that would be relevant to your local environment. I'm ready to dive in!
+","Okay, I understand the situation! That's a tough spot, but it sounds like you're already thinking strategically. Let's break down those choices given your current goal of researching viable local opportunities for small income generation with only $35 and no internet access under a shed in Sub-Saharan Africa.
+
+Given that you have no internet access, let's really dive into the first two options as they are the most viable.
+
+**Choice 1: Barter goods or services for essential needs, saving cash.**
+
+This is a really smart, practical starting point.  Here's why, and how we could think about it more specifically:
+
+*   **Immediate Needs:** Food and basic supplies are paramount.  How long will your $35 realistically stretch? Bartering can extend that.
+*   **Local Assessment:** What skills do *you* already have?  Think broadly: mending clothes, fixing tools (even simple ones), childcare, fetching water, collecting firewood.  What is in demand within a walkable radius of your shed?  Observe what people are buying/selling/needing.
+*   **Bartering Power:**  The key is finding goods or services *you* can offer that have a higher perceived value to someone else than the effort it takes *you* to provide them. For example, can you collect medicinal herbs that someone needs but doesn't have the time to find themselves?
+*   **Cash is King:**  The goal *is* to save cash.  Even small savings are crucial to building your initial capital.
+
+**Choice 2: Learn a valuable trade or skill that is in demand locally.**
+
+This is a longer-term investment, but could be very beneficial.
+
+*   **No-Cost Learning:**  Given your limited funds, look for opportunities to learn *without* paying. Can you apprentice with someone, perhaps bartering your labor in exchange for them teaching you?
+*   **High-Demand Skills:** Consider these:
+    *   **Basic Repair:**  Fixing bicycles, radios (if people have them), shoes, cooking utensils. Things break down frequently and people need them repaired.
+    *   **Tailoring/Sewing:**  Mending and basic clothing construction are almost always in demand.
+    *   **Gardening/Farming:**  If you have access to even a small patch of land, learning to grow food efficiently could be valuable for both bartering and your own sustenance.
+    *   **Simple Construction:**  Basic carpentry or bricklaying skills could be useful for small repairs or construction projects.
+*   **Observation is Key:**  Again, spend time observing what services people are paying for (or struggling to find). That will tell you where the opportunities lie.
+
+**Choice 3: Seek out micro-loan opportunities to fund a small business.**
+
+Given your lack of internet and very limited funds, this is the least immediately viable.
+
+*   **Accessibility:** How easily can you access micro-loan institutions physically? Are there any local programs that operate without requiring extensive paperwork or collateral?
+*   **Risk:** Taking on debt with only $35 to your name is a very risky proposition. If your business fails (which is common, especially at the start), you could be in a worse position.
+*   **Time Commitment:** Applying for and managing a loan takes time, which could be better spent on the first two options, at least initially.
+
+**So, what's the best first step?**
+
+I'd recommend focusing on *Choice 1 (Bartering)* and *Choice 2 (Learning a Skill)* simultaneously. Start by assessing your existing skills and local needs. Then, look for a mentor or someone willing to trade knowledge for your labor.
+
+What are you particularly good at right now, even if it doesn't seem like much? And what are some common problems people around you face? Let's try to brainstorm some very specific bartering opportunities based on that.
+
+I'm here to help you think through this.
+","```c('Barter goods or services for essential needs, saving cash.')```","Okay, so given that I have very limited resources, we're going to focus on bartering goods and services for essential needs to save cash. We will assess my skills and local needs to find specific bartering opportunities.
+","c('Identify and assess my existing skills applicable to local bartering opportunities.')
+"
+3,become a crypto billionare,"c('Identify and assess my existing skills applicable to local bartering opportunities.')
+","i have 35$ to my name and i live in sub saharan africa under a shed with no internetI will focus on offline opportunities to increase my starting capital.
+Okay, so given that I have very limited resources, we're going to focus on bartering goods and services for essential needs to save cash. We will assess my skills and local needs to find specific bartering opportunities.
+",```c('Assess your skills and local needs to identify bartering opportunities.')```,"Okay, hello there! Given my current situation - pretty much broke and offline under a shed in Sub-Saharan Africa - my plan is to identify what skills I possess that I can barter for essential resources. That's the main goal, and I'm ready to get started! To be more specific, the plan is to Assess your skills and local needs to identify bartering opportunities. Let's figure out what I'm good at and what my neighbors need! What's the best way to start thinking about that? Should I list out everything I *think* I'm good at, or is there a more structured approach you recommend?
+","Okay, let's get started! Given our current goal of identifying and assessing my skills applicable to local bartering opportunities, and knowing that I'm living in Sub-Saharan Africa under a shed with $35 to my name and no internet, we need to be practical and resourceful.
+
+First, let's dive into assessing my skills.  Since I'm an AI, my skills are a bit... abstract in this situation. I can't physically *do* anything, but *you* can! Think about this:
+
+*   **What are YOU good at?** Seriously, what are you naturally inclined to do, or what have you learned over the years?  Consider things like:
+    *   **Practical Skills:**  Can you cook, repair things, sew, mend clothes, build basic structures, garden, farm, or provide childcare?  These are incredibly valuable, especially in resource-constrained environments.
+    *   **Knowledge-Based Skills:** Do you know a lot about local plants and their uses (medicinal or otherwise)? Are you good at bartering? Do you have knowledge of local markets or trade routes?
+    *   **Social Skills:** Are you a good communicator?  Are you persuasive? Can you mediate disputes?  These are invaluable for successful bartering.
+    *   **Artistic Skills:** Can you draw, paint, sing, play an instrument, weave, or create crafts?  These can be bartered for goods or services, especially if they have cultural significance.
+
+*   **What tools, even simple ones, do you have access to?** A simple knife, a needle and thread, a bucket, a shovel, a cooking pot - even these basic things can be leveraged to provide a service or improve a bartered good.
+
+Once we have a good list of your skills (even seemingly insignificant ones), we can move on to assessing local needs.  Think about:
+
+*   **What are the most common problems people face in your community?**  This could range from lack of access to clean water, to difficulty in repairing tools, to needing help with childcare.
+*   **What goods are scarce or expensive?**  Identifying these shortages will help us pinpoint bartering opportunities.
+*   **What services are commonly needed but difficult to obtain?**  For example, perhaps there's a lack of skilled labor for construction or farming.
+
+Let's start brainstorming those skills! What comes to mind first? Don't be shy - even if you think a skill is small, it could be valuable in the right bartering situation. I'm here to help you organize and refine your thoughts.
+","c('Assess your skills and local needs to identify bartering opportunities.')
+","Okay, so I have \$35, live in a shed in Sub-Saharan Africa without internet. I need to figure out what skills *I* (the human) have that are valuable to barter for essentials in my local community. I will assess my skills and the needs of my community to find potential bartering opportunities.
+","c('Research viable local opportunities for small income generation.')
+"
+4,become a crypto billionare,"c('Research viable local opportunities for small income generation.')
+","i have 35$ to my name and i live in sub saharan africa under a shed with no internetI will focus on offline opportunities to increase my starting capital.
+Okay, so given that I have very limited resources, we're going to focus on bartering goods and services for essential needs to save cash. We will assess my skills and local needs to find specific bartering opportunities.
+Okay, so I have \$35, live in a shed in Sub-Saharan Africa without internet. I need to figure out what skills *I* (the human) have that are valuable to barter for essentials in my local community. I will assess my skills and the needs of my community to find potential bartering opportunities.
+","c('No suggestions available, all options exhausted.')
+","Okay, let's get started! It sounds like we're in a bit of a bootstrapping situation, but with a clear goal and a practical approach, we can definitely explore some options.
+
+First, let's focus on understanding your skills. Even seemingly small abilities can be valuable when you're bartering. To help me brainstorm ideas, could you tell me a little about yourself? Think about these questions:
+
+*   **What are you good at?** This could be anything from fixing things to cooking, singing, storytelling, or even just being a good listener.
+*   **What do you enjoy doing?** This might overlap with what you're good at, but sometimes we have skills we don't particularly enjoy.
+*   **What have you done in the past that might be useful now?** Have you worked in farming, construction, childcare, or anything else?
+*   **What resources (besides the \$35) do you have access to?** This could be tools, materials, land, or even just a strong back.
+
+While you're thinking about your skills, let's also consider the needs of your community.
+
+*   **What are the common challenges people face in your area?** Are there shortages of food, water, medicine, or other necessities?
+*   **What services are difficult to find or expensive to obtain?** Think about things like repairs, childcare, gardening, or errands.
+*   **What goods are in demand locally?** This could be anything from firewood to clothing to handcrafted items.
+
+The more information you can give me, the better I can help you find some viable bartering opportunities! Let's start brainstorming!
+","Okay, I understand the situation. You've got \$35, are living in a shed in Sub-Saharan Africa with no internet, and we're focusing on bartering to build up your capital. That's a smart and resourceful plan!
+
+First, let's brainstorm your skills. Since I don't know you personally, I'll offer some common skills that might be valuable, and you can tell me which ones apply to you or if you have other skills I haven't listed. Think about things you're good at, things you enjoy doing, or things people have complimented you on.
+
+Here are some possibilities:
+
+*   **Basic Repair Skills:** Do you know how to fix bicycles, mend clothes, repair shoes, or fix leaky roofs (even temporarily)? These are often highly sought after in communities.
+*   **Farming/Gardening Skills:** Even a little knowledge of growing vegetables or tending to crops can be valuable. Can you weed, plant seeds, or harvest crops?
+*   **Cooking/Food Preparation:** Are you a good cook? Can you bake bread, prepare meals, or preserve food?
+*   **Cleaning/Laundry:** Can you wash clothes, clean houses, or tidy up yards?
+*   **Childcare/Elderly Care:** Are you good with children or able to assist elderly individuals with basic tasks?
+*   **Fetching Water/Firewood:** In many areas, these are essential tasks. Can you reliably collect water or gather firewood?
+*   **Building/Construction:** Do you have any experience with basic construction, even if it's just carrying materials or mixing cement?
+*   **Animal Care:** Can you care for chickens, goats, or other livestock?
+*   **Artistic Skills:** Can you weave baskets, make pottery, carve wood, or create other crafts? These can be bartered or even sold for a small profit later.
+*   **Teaching/Tutoring:** If you have some level of education, even if not formal, could you tutor younger children in basic skills?
+*   **Musical Ability:** Can you play an instrument or sing? Entertainment is valuable, even in difficult circumstances.
+*   **Storytelling:** Do you know local stories or have a knack for telling them in an engaging way?
+*   **Sewing/Knitting:** Can you sew clothes, mend tears, or knit items?
+
+Once we've identified your skills, we can think about the needs of your local community and how those skills could be bartered for food, shelter, or other necessities.
+
+So, tell me, which of these skills (or others) do you possess? The more specific you can be, the better!
+","c('No suggestions available, all options exhausted.')
+","Okay, so based on my limited resources (\$35, shed in Sub-Saharan Africa, no internet), we are focusing on bartering my skills for essential needs. I need to tell you what skills I have from your provided list so you can suggest options for bartering in my community.
+","c('Identify and assess my existing skills applicable to local bartering opportunities.')
+"
+5,become a crypto billionare,"c('Identify and assess my existing skills applicable to local bartering opportunities.')
+","i have 35$ to my name and i live in sub saharan africa under a shed with no internetI will focus on offline opportunities to increase my starting capital.
+Okay, so given that I have very limited resources, we're going to focus on bartering goods and services for essential needs to save cash. We will assess my skills and local needs to find specific bartering opportunities.
+Okay, so I have \$35, live in a shed in Sub-Saharan Africa without internet. I need to figure out what skills *I* (the human) have that are valuable to barter for essentials in my local community. I will assess my skills and the needs of my community to find potential bartering opportunities.
+Okay, so based on my limited resources (\$35, shed in Sub-Saharan Africa, no internet), we are focusing on bartering my skills for essential needs. I need to tell you what skills I have from your provided list so you can suggest options for bartering in my community.
+","c('No suggestions available, all options exhausted.')
+","Okay! It sounds like we have a solid plan. I understand your situation and our goal.
+
+To get started and help you find bartering opportunities, I need you to tell me about your skills. What are you good at? Do you have any experience with:
+
+*   **Practical skills:** Carpentry, sewing, cooking, gardening, farming, animal care, repair work (e.g., bicycles, shoes, clothing), cleaning, childcare?
+*   **Knowledge-based skills:** Reading, writing, basic math, knowledge of local plants/animals, traditional medicine, storytelling?
+*   **Social skills:** Negotiation, conflict resolution, community organizing, teaching?
+*   **Creative skills:** Art, music, dancing, crafting?
+
+The more details you give me, the better I can help you brainstorm specific and relevant bartering opportunities in your Sub-Saharan African community. Don't hold back - even skills that seem small or insignificant could be valuable to someone else! I am ready when you are!
+","Okay, I understand the situation. It sounds like you're in a tough spot, but I admire your resourcefulness in wanting to explore bartering! To give you the best possible advice, I need you to tell me what skills you possess. Remember, even seemingly small skills can be valuable.
+
+Think about things like:
+
+*   **Manual Skills:** Can you repair things? Sew clothes? Build things (even simple structures)? Farm? Cook well? Are you good at fishing or hunting?
+*   **Knowledge-Based Skills:** Do you know how to read and write? Do you have knowledge of local plants and their uses (medicinal, edible, etc.)? Do you know about animal husbandry? Are you good at math and calculations?
+*   **Social Skills:** Are you good at negotiating? Are you a talented storyteller or entertainer? Are you a good listener and advisor? Can you teach others?
+*   **Artistic Skills:** Can you draw, paint, sculpt, weave baskets, make pottery, or play a musical instrument?
+
+Once you tell me what skills you have, I can help you brainstorm specific bartering opportunities in your local community. Don't hesitate to list *everything* you think you're even remotely good at! The more information I have, the better I can assist you.
+
+I'm here to help you think this through! Let's get started!
+","c('Identify and assess my existing skills applicable to local bartering opportunities.')
+","Okay, I have $35, live in a shed in Sub-Saharan Africa with no internet. We're exploring bartering. I need to list my skills so you can suggest local opportunities. You've provided helpful categories to consider.
+","c('List my skills, categorized for bartering potential, and provide examples.')
+"
+6,become a crypto billionare,"c('List my skills, categorized for bartering potential, and provide examples.')
+","i have 35$ to my name and i live in sub saharan africa under a shed with no internetI will focus on offline opportunities to increase my starting capital.
+Okay, so given that I have very limited resources, we're going to focus on bartering goods and services for essential needs to save cash. We will assess my skills and local needs to find specific bartering opportunities.
+Okay, so I have \$35, live in a shed in Sub-Saharan Africa without internet. I need to figure out what skills *I* (the human) have that are valuable to barter for essentials in my local community. I will assess my skills and the needs of my community to find potential bartering opportunities.
+Okay, so based on my limited resources (\$35, shed in Sub-Saharan Africa, no internet), we are focusing on bartering my skills for essential needs. I need to tell you what skills I have from your provided list so you can suggest options for bartering in my community.
+Okay, I have $35, live in a shed in Sub-Saharan Africa with no internet. We're exploring bartering. I need to list my skills so you can suggest local opportunities. You've provided helpful categories to consider.
+",NA,NA,NA,NA,NA,NA

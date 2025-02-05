@@ -518,7 +518,7 @@ decision_log <- initialize_first_iteration(original_goal = original_goal,
                                            original_information = original_information)
 
 
-n <- 16
+n <- 5
 
 for(i in 2:n){
   
@@ -532,4 +532,4 @@ for(i in 2:n){
   
 }
 
-readr::write_csv(decision_log,'./sampleOutputs/gemini-test-crypto.csv')
+readr::write_csv(decision_log,'./sampleOutputs/gemini-test-crypto2.csv')
