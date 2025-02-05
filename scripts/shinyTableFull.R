@@ -42,4 +42,4 @@ server <- function(input, output, session) {}
 
 #shinyApp(ui, server)
 
-save_html(ui, "./sampleOutputs/goal_progression-alien-full.html")
+save_html(ui, "./sampleOutputs/goal_progression-fight-full.html")

@@ -250,8 +250,12 @@ continueIteration <- function(i){
   original_goal <- decision_log[i,'original_goal']
   information_vector <- decision_log[i,'information_vector']
   
+  fullChoiceList <- decision_log[,'choice_chosen'] %>% unique() %>% as.character() %>% paste()
+  
   payload <- list(
-    question = paste0("Original Goal- ",original_goal, "+ ", " Information- ", information_vector) )
+    question = paste0("Original Goal- ",original_goal, "+ ", " Information- ", information_vector,
+                      'Contraint - choices suggested must not include previously made choices ',
+                      fullChoiceList))
   
   response <- POST(
     url,
@@ -302,8 +306,8 @@ continueIteration <- function(i){
   # decision_logRow[1,'information_vector'] <- content(response)$text
   ####INFORMATION TRANSLATION MOD over#####
   
-  state <- paste0("Original Goal- ",
-                  decision_logRow[1,'original_goal'],
+  state <- paste0("Current Goal- ",
+                  decision_logRow[1,'adjusted_goal'],
                   "Information Vector - ",
                   decision_logRow[1,'information_vector'],
                   "Choice Vector -",
@@ -346,8 +350,8 @@ continueIteration <- function(i){
   
   decision_logRow[1,'objective_feedback'] <- content(response)$text
   
-  state <- paste0("Original Goal- ",
-                  decision_logRow[1,'original_goal'],
+  state <- paste0("Current Goal- ",
+                  decision_logRow[1,'adjusted_goal'],
                   "Information Vector - ",
                   decision_logRow[1,'information_vector'],
                   "Choice Vector -",
@@ -379,8 +383,8 @@ continueIteration <- function(i){
   
   decision_logRow[1,'choice_chosen'] <- content(response)$text
   
-  state <- paste0("Original Goal- ",
-                  decision_logRow[1,'original_goal'],
+  state <- paste0("Current Goal- ",
+                  decision_logRow[1,'adjusted_goal'],
                   "Information Vector - ",
                   decision_logRow[1,'information_vector'],
                   "Choice Vector -",
@@ -419,8 +423,8 @@ continueIteration <- function(i){
   
   
   
-  state <- paste0("Original Goal- ",
-                  decision_logRow[1,'original_goal'],
+  state <- paste0("Current Goal- ",
+                  decision_logRow[1,'adjusted_goal'],
                   "Information Vector - ",
                   decision_logRow[1,'information_vector'],
                   "Choice Vector -",
@@ -442,8 +446,12 @@ continueIteration <- function(i){
   
   url <- "http://host.docker.internal:3000/api/v1/prediction/8b10f724-a9fe-434d-a429-d93b4518c761"
   
+  fullGoalList <- decision_log[,'adjusted_goal'] %>% unique() %>% as.character() %>% paste()
+  
+  
   payload <- list(
-    question = state)
+    question = paste0(state, "Constraint - you must always pick a new goal different than previously chosen goals ", fullGoalList)
+  )
   
   response <- POST(
     url,
@@ -501,15 +509,16 @@ createNewRow <- function(i){
 #newEmptyRow <- createNewRow(2)
 
 #decision_log <- rbind(decision_log,newEmptyRow )
-original_goal <- "Successfully establish communication with an unknown alien species."
+original_goal <- "Become the undisputed champion of the underground fight scene."
 
-original_information <- "You’re the lead xenolinguist on a deep-space research vessel. The alien signal is unlike anything humanity has seen before. You have limited power and resources to investigate."
+original_information <- " You’re a former high school wrestling star with no pro experience. You’ve got $500 to your name and an old coach who still believes in you."
+
 
 decision_log <- initialize_first_iteration(original_goal = original_goal,
                                            original_information = original_information)
 
 
-n <- 5
+n <- 15
 
 for(i in 2:n){
   
@@ -523,4 +532,4 @@ for(i in 2:n){
   
 }
 
-readr::write_csv(decision_log,'./sampleOutputs/gemini-testalien.csv')
+readr::write_csv(decision_log,'./sampleOutputs/gemini-test-fight.csv')
