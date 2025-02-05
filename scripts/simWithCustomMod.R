@@ -518,7 +518,7 @@ decision_log <- initialize_first_iteration(original_goal = original_goal,
                                            original_information = original_information)
 
 
-n <- 5
+n <- 3
 
 for(i in 2:n){
   

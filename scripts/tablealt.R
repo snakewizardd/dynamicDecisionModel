@@ -3,11 +3,17 @@ library(reactable)
 library(htmltools)
 library(shiny)
 
+plotData <- decision_log
+
+plotData <- decision_log %>% mutate(iteration = 1:nrow(decision_log)) %>%
+  select(iteration, everything())
+
+
 # Extract the original goal (assuming it's the same for all iterations)
-original_goal_text <- unique(decision_log$original_goal)[1]
+original_goal_text <- unique(plotData$original_goal)[1]
 
 # Select relevant columns (removing original_goal from the table)
-decision_log_filtered <- decision_log %>%
+decision_log_filtered <- plotData %>%
   select(iteration, choice_vector, choice_chosen, new_goal, new_information)
 
 # Create the UI with a header and reactable table
