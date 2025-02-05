@@ -512,4 +512,4 @@ for(i in 2:n){
   
 }
 
-readr::write_csv(decision_log,'./sampleOutputs/gemini-test-aliens.csv')
+readr::write_csv(decision_log,'gemini-test2.csv')

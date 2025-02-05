@@ -285,21 +285,22 @@ continueIteration <- function(i){
   
   decision_logRow[1,'choices_for_step'] <- content(response)$text
   
-  
-  url <- "http://host.docker.internal:3000/api/v1/prediction/e273e81c-6b4d-4735-ad7a-55db61a107cd"
-  payload <- list(
-    question = decision_logRow[1,'information_vector'] %>% as.character()
-  )
-  response <- POST(
-    url,
-    add_headers(
-      "Content-Type" = "application/json"
-    ),
-    body = toJSON(payload, auto_unbox = TRUE),
-    encode = "json"
-  )
-  
-  decision_logRow[1,'information_vector'] <- content(response)$text
+  ####INFORMATION TRANSLATION MOD#####
+  # url <- "http://host.docker.internal:3000/api/v1/prediction/e273e81c-6b4d-4735-ad7a-55db61a107cd"
+  # payload <- list(
+  #   question = decision_logRow[1,'information_vector'] %>% as.character()
+  # )
+  # response <- POST(
+  #   url,
+  #   add_headers(
+  #     "Content-Type" = "application/json"
+  #   ),
+  #   body = toJSON(payload, auto_unbox = TRUE),
+  #   encode = "json"
+  # )
+  # 
+  # decision_logRow[1,'information_vector'] <- content(response)$text
+  ####INFORMATION TRANSLATION MOD over#####
   
   state <- paste0("Original Goal- ",
                   decision_logRow[1,'original_goal'],
@@ -522,4 +523,4 @@ for(i in 2:n){
   
 }
 
-readr::write_csv(decision_log,'gemini-test3.csv')
+readr::write_csv(decision_log,'./sampleOutputs/gemini-testalien.csv')

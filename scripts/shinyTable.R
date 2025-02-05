@@ -37,6 +37,6 @@ ui
 
 server <- function(input,output,session){}
 
-shinyApp(ui,server)
+#shinyApp(ui,server)
 
-save_html(ui, "goal_progression-drone.html")
+save_html(ui, "./sampleOutputs/goal_progression-alien.html")
