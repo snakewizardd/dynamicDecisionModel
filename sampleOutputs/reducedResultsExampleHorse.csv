@@ -1,0 +1,11 @@
+n,pnull,Fn,Idelta
+1,I want to learn how to ride a horse,"c(""Get a medical check-up before starting horse riding lessons"")","c('The user recognized the importance of health and safety by prioritizing a medical check-up before beginning horse riding lessons.') 
+"
+2,"c('newgoal: Get a medical check-up and then take a horse riding lesson with a qualified instructor') 
+","c(""Take a horse riding lesson with a qualified instructor"")","c('Priority shifted from directly learning to horse riding to ensuring health and safety first. Decision reflects  consideration of potential risks associated with horse riding. User acknowledged the need for a medical check-up before starting lessons.') 
+"
+3,"c('newgoal:  Take a horse riding lesson with a qualified instructor after receiving a medical check-up.') 
+","c(""Start with horse riding simulation or virtual lessons"")","c('The user prioritized health and safety by choosing a medical check-up. They then decided to start with virtual lessons before taking a  lesson with a qualified instructor.') 
+"
+4,"newgoal:  Start with horse riding simulation or virtual lessons and, after gaining familiarity, take a horse riding lesson with a qualified instructor after a medical check-up. 
+",NA,NA

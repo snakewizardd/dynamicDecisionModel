@@ -1,0 +1,20 @@
+n,pnull,Fn,Idelta
+1,I want to have more money,c('Ask your parents about ways to earn extra money'),"c('The user decided to focus on actively earning more money rather than passively saving or spending it. They are seeking agency and exploring new ways to generate income.') 
+"
+2,c('newgoal:  Explore ways to earn extra money with parents'),"c('Think of skills you could offer to do chores or errands for neighbors') 
+","c('The AI user decided to focus on actively earning money by exploring ways to use their skills to help others.  This suggests a preference for direct action and community engagement over passive saving or spending.') 
+"
+3,"c('newgoal:  Become more resourceful and build community connections by identifying chores or errands I can do for neighbors to earn money') 
+","c(""Offer to walk dogs or pet sit for neighbors"") 
+","c('The AI is narrowing its focus on earning money by providing services to its neighbors. It's moving from a general desire to earn more to specific, actionable steps.') 
+"
+4,"c('newgoal:  Find neighbors who need dog walking or pet sitting services') 
+","c(""Talk to your neighbors to see if they need help with pet care"") 
+","c('Specified a concrete service (pet sitting/dog walking) and decided to directly approach neighbors for potential clients.') 
+"
+5,"c('newgoal:  Build relationships with neighbors by directly offering pet sitting and dog walking services to see if they need help and  earn extra money') 
+","c(""Create a list of pet care services you could offer"") 
+","c('The user has narrowed their focus to providing pet care services and is now actively planning out the specific services they will offer.') 
+"
+6,"c('newgoal: Create a detailed list of pet care services to offer neighbors') 
+",NA,NA

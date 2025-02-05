@@ -1,0 +1,106 @@
+n,pnull,I1,TransformI,D,FM,Fn,Idelta,TIdelta,newP
+1,I want to have more money,"Information: 
+                I am a kid. i sometimes make money when i lose teeth, or my parents give me money ","c(""money"", ""teeth"", ""parents"", ""kids"") 
+","c(""Save your money for something special"", ""Ask your parents about ways to earn extra money"", ""Use your money to help others"") 
+","## Evaluation of Potential Choices
+
+| Subjective Assessment | Objective Assessment |
+|---|---|
+|  ""Save your money for something special"" appeals to a child's desire for things they want. |  Grounded in familiar concept of saving. Potential for delayed gratification and future reward. |
+| ""Ask your parents about ways to earn extra money"" is practical and aligns with the child's desire for more money. |  Empowers the child with agency and introduces the concept of  earning beyond existing sources. |
+| ""Use your money to help others"" promotes altruism but may not resonate as strongly with a child focused on personal gain. |  Values-based choice emphasizing empathy and generosity.  | 
+
+
+",c('Ask your parents about ways to earn extra money'),"c('The user decided to focus on actively earning more money rather than passively saving or spending it. They are seeking agency and exploring new ways to generate income.') 
+","c(""money"", ""earn"", ""parents"", ""extra money"") 
+",c('newgoal:  Explore ways to earn extra money with parents')
+2,c('newgoal:  Explore ways to earn extra money with parents'),"Information: 
+                I am a kid. i sometimes make money when i lose teeth, or my parents give me money c('The user decided to focus on actively earning more money rather than passively saving or spending it. They are seeking agency and exploring new ways to generate income.') 
+","c(""money"", ""earn"", ""extra money"", ""parents"", ""agency"", ""income"", ""save"", ""spend"") 
+","c(""Research different ways kids earn money online"", ""Think of skills you could offer to do chores or errands for neighbors"", ""Look for small tasks or projects you can do to earn money in your community"") 
+","## Choice Analysis
+
+| Subjective Assessment | Objective Assessment |
+|---|---|
+|  **Research different ways kids earn money online:** This choice appeals to curiosity and modern solutions. It might lead to learning new things and discovering unique opportunities.  |  **Pros:** Can expose the user to a variety of income-generating ideas. **Cons:** Requires internet access and digital literacy. Potential safety concerns related to online interactions. |
+| **Think of skills you could offer to do chores or errands for neighbors:** This option leverages existing skills and builds community connections. It promotes responsibility and a helpful attitude. | **Pros:**  Practical, utilizes existing skills, builds community relationships. **Cons:**  May have limited earning potential depending on skills and demand. |
+| **Look for small tasks or projects you can do to earn money in your community:** This choice encourages initiative and exploration within the immediate environment. It promotes resourcefulness and local engagement. | **Pros:**  Promotes local engagement, encourages resourcefulness. **Cons:** May require more effort to identify opportunities. Earning potential might be sporadic. | 
+
+
+","c('Think of skills you could offer to do chores or errands for neighbors') 
+","c('The AI user decided to focus on actively earning money by exploring ways to use their skills to help others.  This suggests a preference for direct action and community engagement over passive saving or spending.') 
+","c('money', 'earn', 'kids', 'chore', 'errands', 'community', 'skills', 'parents', 'save', 'spend') 
+","c('newgoal:  Become more resourceful and build community connections by identifying chores or errands I can do for neighbors to earn money') 
+"
+3,"c('newgoal:  Become more resourceful and build community connections by identifying chores or errands I can do for neighbors to earn money') 
+","Information: 
+                I am a kid. i sometimes make money when i lose teeth, or my parents give me money c('The user decided to focus on actively earning more money rather than passively saving or spending it. They are seeking agency and exploring new ways to generate income.') 
+c('The AI user decided to focus on actively earning money by exploring ways to use their skills to help others.  This suggests a preference for direct action and community engagement over passive saving or spending.') 
+","c(""money"", ""earn"", ""extra money"", ""kids"", ""chore"", ""errands"", ""neighbors"", ""community"", ""skills"", ""agency"", ""income"", ""parents"") 
+","c(""Look for opportunities to teach younger kids something you're good at"", ""Create something you can sell at a local craft fair or online"", ""Offer to walk dogs or pet sit for neighbors"") 
+","## Potential Choice Analysis 
+
+| Subjective Assessment | Objective Assessment |
+|---|---|
+| **Look for opportunities to teach younger kids something you're good at:**  This choice aligns with the AI's focus on using skills to earn money and helping others. It suggests a desire to share knowledge and potentially build a recurring income stream. |  This choice requires identifying suitable students and marketing the teaching service. It may involve some initial effort to establish a client base. |
+| **Create something you can sell at a local craft fair or online:** This option taps into creativity and entrepreneurial spirit.  It allows for potential profit from handcrafted items, appealing to the desire for agency and income generation. |  This choice requires time and resources for creating products, setting prices, and managing sales. Market demand and competition for handmade goods need to be considered. |
+| **Offer to walk dogs or pet sit for neighbors:** This aligns with the AI's focus on community engagement and utilizing existing skills (likely enjoying animals). It offers a tangible service with potential for regular income. |  This choice might require physical effort and responsibility.  Availability of potential clients and competition from other pet sitters/walkers should be assessed. |
+
+
+
+","c(""Offer to walk dogs or pet sit for neighbors"") 
+","c('The AI is narrowing its focus on earning money by providing services to its neighbors. It's moving from a general desire to earn more to specific, actionable steps.') 
+","c('money', 'earn', 'parents', 'kids', 'chores', 'errands', 'skills', 'community', 'walk dogs', 'pet sit')  
+","c('newgoal:  Find neighbors who need dog walking or pet sitting services') 
+"
+4,"c('newgoal:  Find neighbors who need dog walking or pet sitting services') 
+","Information: 
+                I am a kid. i sometimes make money when i lose teeth, or my parents give me money c('The user decided to focus on actively earning more money rather than passively saving or spending it. They are seeking agency and exploring new ways to generate income.') 
+c('The AI user decided to focus on actively earning money by exploring ways to use their skills to help others.  This suggests a preference for direct action and community engagement over passive saving or spending.') 
+c('The AI is narrowing its focus on earning money by providing services to its neighbors. It's moving from a general desire to earn more to specific, actionable steps.') 
+","c(""money"", ""earn"", ""kid"", ""parents"", ""save"", ""spend"", ""skills"", ""chore"", ""errands"", ""community"", ""teach"", ""craft"", ""dog walking"", ""pet sitting"") 
+","c(""Create flyers advertising your dog walking or pet sitting services"", ""Research prices for dog walking and pet sitting in your area"", ""Talk to your neighbors to see if they need help with pet care"") 
+","##  Potential Choice Analysis 
+
+| Subjective Assessment | Objective Assessment |
+|---|---|
+|  **Create flyers advertising your dog walking or pet sitting services**  - This choice shows initiative and a proactive approach to marketing services. It's a creative and tangible step towards gaining clients. |  Requires design skills and materials (paper, ink, etc.). May be time-consuming. Effectiveness depends on community visibility. |
+|  **Research prices for dog walking and pet sitting in your area** -  Important for setting competitive rates and understanding the market value of services. | Provides valuable information for pricing strategies and understanding demand. Requires time and internet access for research. |
+|  **Talk to your neighbors to see if they need help with pet care** - Direct and personal approach to finding potential clients. Allows for building relationships and understanding individual needs. | Relies on existing connections and personal communication skills. May not be as efficient as advertising for reaching a wider audience. | 
+
+
+","c(""Talk to your neighbors to see if they need help with pet care"") 
+","c('Specified a concrete service (pet sitting/dog walking) and decided to directly approach neighbors for potential clients.') 
+","c('money', 'earn', 'extra money', 'save', 'spending', 'agency', 'income', 'chores', 'errands', 'skills', 'community', 'teach', 'craft', 'sell', 'dog walking', 'pet sitting', 'neighbors', 'services',  'clients')  
+","c('newgoal:  Build relationships with neighbors by directly offering pet sitting and dog walking services to see if they need help and  earn extra money') 
+"
+5,"c('newgoal:  Build relationships with neighbors by directly offering pet sitting and dog walking services to see if they need help and  earn extra money') 
+","Information: 
+                I am a kid. i sometimes make money when i lose teeth, or my parents give me money c('The user decided to focus on actively earning more money rather than passively saving or spending it. They are seeking agency and exploring new ways to generate income.') 
+c('The AI user decided to focus on actively earning money by exploring ways to use their skills to help others.  This suggests a preference for direct action and community engagement over passive saving or spending.') 
+c('The AI is narrowing its focus on earning money by providing services to its neighbors. It's moving from a general desire to earn more to specific, actionable steps.') 
+c('Specified a concrete service (pet sitting/dog walking) and decided to directly approach neighbors for potential clients.') 
+","c('money', 'earn', 'extra money', 'kids', 'chores', 'errands', 'neighbors', 'skills', 'community', 'dog walking', 'pet sitting', 'services', 'flyers', 'prices') 
+","c(""Create a list of pet care services you could offer"", ""Design a simple logo or flyer to advertise your services"", ""Start keeping track of how much time you spend caring for pets"") 
+","## Evaluation of Potential Choices
+
+| Subjective Assessment | Objective Assessment |
+|---|---|
+| **Create a list of pet care services you could offer:**  This choice encourages thoughtfulness and planning, which is important for a successful business.   |  Meets the goal by helping the user define their offerings more clearly. |
+| **Design a simple logo or flyer to advertise your services:**  This choice focuses on marketing and outreach, which is crucial for attracting customers. |  Meets the goal by providing a tangible way to promote the offered services. | 
+| **Start keeping track of how much time you spend caring for pets:** This choice emphasizes organization and professionalism, which are important for fair pricing and business management. |  Meets the goal by facilitating accurate time tracking for billing purposes.  | 
+
+
+","c(""Create a list of pet care services you could offer"") 
+","c('The user has narrowed their focus to providing pet care services and is now actively planning out the specific services they will offer.') 
+","c('money', 'earn', 'extra', 'kids', 'chore', 'errands', 'neighbors', 'skills', 'dog walking', 'pet sitting', 'services', 'community', 'agency', 'income', 'passive', 'active', 'direct action') 
+","c('newgoal: Create a detailed list of pet care services to offer neighbors') 
+"
+6,"c('newgoal: Create a detailed list of pet care services to offer neighbors') 
+","Information: 
+                I am a kid. i sometimes make money when i lose teeth, or my parents give me money c('The user decided to focus on actively earning more money rather than passively saving or spending it. They are seeking agency and exploring new ways to generate income.') 
+c('The AI user decided to focus on actively earning money by exploring ways to use their skills to help others.  This suggests a preference for direct action and community engagement over passive saving or spending.') 
+c('The AI is narrowing its focus on earning money by providing services to its neighbors. It's moving from a general desire to earn more to specific, actionable steps.') 
+c('Specified a concrete service (pet sitting/dog walking) and decided to directly approach neighbors for potential clients.') 
+c('The user has narrowed their focus to providing pet care services and is now actively planning out the specific services they will offer.') 
+",NA,NA,NA,NA,NA,NA,NA
