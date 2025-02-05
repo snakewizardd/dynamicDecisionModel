@@ -509,16 +509,16 @@ createNewRow <- function(i){
 #newEmptyRow <- createNewRow(2)
 
 #decision_log <- rbind(decision_log,newEmptyRow )
-original_goal <- "Become the undisputed champion of the underground fight scene."
+original_goal <- "become a crypto billionare"
 
-original_information <- " You’re a former high school wrestling star with no pro experience. You’ve got $500 to your name and an old coach who still believes in you."
+original_information <- "i have 35$ to my name and i live in sub saharan africa under a shed with no internet"
 
 
 decision_log <- initialize_first_iteration(original_goal = original_goal,
                                            original_information = original_information)
 
 
-n <- 15
+n <- 16
 
 for(i in 2:n){
   
@@ -532,4 +532,4 @@ for(i in 2:n){
   
 }
 
-readr::write_csv(decision_log,'./sampleOutputs/gemini-test-fight.csv')
+readr::write_csv(decision_log,'./sampleOutputs/gemini-test-crypto.csv')
