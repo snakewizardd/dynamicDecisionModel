@@ -1,0 +1,10 @@
+P_null: I want to be a crypto billionaire
+
+I_0: I live in subsaharan africa in a shed with no internet and have only $35 to my name
+
+D_1: 
+Use internet cafe to access information about cryptocurrency, 
+Try to find a way to get internet in the shed, 
+Use $35 to buy a book about cryptocurrency, 
+Look for a local cryptocurrency community or meetup, 
+Use $35 to buy a used smartphone to access internet.
