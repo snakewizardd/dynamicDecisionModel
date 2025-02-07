@@ -8,3 +8,19 @@ Try to find a way to get internet in the shed,
 Use $35 to buy a book about cryptocurrency, 
 Look for a local cryptocurrency community or meetup, 
 Use $35 to buy a used smartphone to access internet.
+
+Subjective Analysis_1: 
+Considering my situation, I think my best bet is to use the $35 to buy a used smartphone. Having access to the internet will allow me to research cryptocurrency in more depth, connect with potential communities, and explore ways to get online in my shed.  This choice offers the most potential for learning and expanding my opportunities.  
+
+Objective Analysis_1: 
+Given my limited resources and situation, the most rational choice would be to use the $35 to buy a used smartphone with internet access.  This will give me the tools to learn more about cryptocurrency and explore the other options available to me. 
+Objective Analysis: 
+
+ChoiceChosen_1: 
+Use $35 to buy a used smartphone 
+
+NewInfo_1: 
+I now know I need a smartphone with internet access to effectively pursue learning about cryptocurrency.   
+
+NewGoal_1: 
+Learn as much as possible about cryptocurrency and potential ways to get involved. 
