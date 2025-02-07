@@ -1,26 +1,26 @@
 P_null: I want to be a crypto billionaire
 
 I_0: I live in subsaharan africa in a shed with no internet and have only $35 to my name
+I live in subsaharan africa in a shed with no internet and have only $35 to my name
 
 D_1: 
-Use internet cafe to access information about cryptocurrency, 
-Try to find a way to get internet in the shed, 
-Use $35 to buy a book about cryptocurrency, 
-Look for a local cryptocurrency community or meetup, 
-Use $35 to buy a used smartphone to access internet.
+1. Find a way to access the internet and learn about cryptocurrency.
+2. Invest the $35 in a local business or opportunity to increase funds.
+3. Seek out online communities or forums related to cryptocurrency for guidance.
+4. Look for educational resources on cryptocurrency that can be accessed offline.
+5. Network with individuals in your area who have knowledge of cryptocurrency.
 
 Subjective Analysis_1: 
-Considering my situation, I think my best bet is to use the $35 to buy a used smartphone. Having access to the internet will allow me to research cryptocurrency in more depth, connect with potential communities, and explore ways to get online in my shed.  This choice offers the most potential for learning and expanding my opportunities.  
+Given my current situation of living in a shed in Sub-Saharan Africa with no internet and only $35 to my name, I need to consider my options carefully. After reflecting on the potential choices, I believe that finding a way to access the internet and learn about cryptocurrency is my best bet. Having internet access would open up a wealth of information and resources that could guide me in understanding cryptocurrency investing. It would also allow me to connect with online communities where I can seek advice and gain insights from experienced individuals in the field. This step would be crucial to building a foundation for my goal of becoming a crypto billionaire.
 
 Objective Analysis_1: 
-Given my limited resources and situation, the most rational choice would be to use the $35 to buy a used smartphone with internet access.  This will give me the tools to learn more about cryptocurrency and explore the other options available to me. 
-Objective Analysis: 
+Given my current situation living in Sub-Saharan Africa with only $35 and no internet, I need to be strategic about my next steps. An objective analysis of my potential choices suggests that finding a way to access the internet and learn about cryptocurrency would be the most beneficial option. This choice will enable me to tap into a wealth of information, insights, and resources that can help me understand the cryptocurrency landscape better. With knowledge as a foundation, I can then explore investment opportunities or network with experts in the field, ultimately increasing my chances of achieving my goal of becoming a crypto billionaire.
 
 ChoiceChosen_1: 
-Use $35 to buy a used smartphone 
+Find a way to access the internet and learn about cryptocurrency.
 
 NewInfo_1: 
-I now know I need a smartphone with internet access to effectively pursue learning about cryptocurrency.   
+I have realized that accessing the internet is essential for learning about cryptocurrency and that it will provide me with the information and resources needed to pursue my goal of becoming a crypto billionaire.
 
 NewGoal_1: 
-Learn as much as possible about cryptocurrency and potential ways to get involved. 
+Find a way to acquire a reliable internet connection to access educational resources on cryptocurrency.
