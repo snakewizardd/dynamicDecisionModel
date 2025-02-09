@@ -98,14 +98,21 @@ createNewRow <- function(i){
   
 }
 
-continue_run <- function(i){
+continue_run <- function(i, choicePromptCustom = NULL,
+                         subjectivePromptCustom = NULL,
+                         objectivePromptCustom = NULL,
+                         chosenPromptCustom = NULL,
+                         infoPromptCustom = NULL,
+                         newGoalPromptCustom = NULL){
   
 
     #Sync RAG DB
    system("aichat --rag ddm --rebuild-rag", intern = TRUE)
 
     #Suggest choices
-  command <- paste0("aichat --model openai:gpt-4o-mini --rag ddm using the newly delcared goal from iteration ",i-1," and considering all previous choices as already DONE, suggest the next choices for the iteration. in plaintext ")
+  command <- paste0("aichat --model openai:gpt-4o-mini --rag ddm ",choicePromptCustom)
+  
+  
   outputChoices <- system(command, intern = TRUE)
    cat(paste0("\nD_", i, ":"), file="output.txt", append=TRUE)
    cat(outputChoices, file="output.txt", append=TRUE)
@@ -114,13 +121,13 @@ continue_run <- function(i){
    system("aichat --rag ddm --rebuild-rag", intern = TRUE)
 
     #Subjective analysis
-   command3 <- paste0("aichat --model openai:gpt-4o-mini --rag ddm in order to advance the current goal in iteration ",i," and considering all previous choices as already DONE, what subjectively should we choose next based on the currently proposed choices")
+   command3 <- paste0("aichat --model openai:gpt-4o-mini --rag ddm ",subjectivePromptCustom)
    outputSubjective <- system(command3, intern = TRUE)
    cat(paste0("\n\nSubjective Analysis_", i, ": \n", outputSubjective, "\n"), file="output.txt", append=TRUE)
 
 
     #Objective analysis
-   command4 <- paste0("aichat --model openai:gpt-4o-mini --rag ddm in order to advance the current goal in iteration ",i," and considering all previous choices as already DONE, what objectively should we choose next based on the currently proposed choices")
+   command4 <- paste0("aichat --model openai:gpt-4o-mini --rag ddm ",objectivePromptCustom)
    outputObjective <- system(command4, intern = TRUE)
    cat(paste0("\nObjective Analysis_", i, ": \n", outputObjective, "\n"), file="output.txt", append=TRUE)
 
@@ -129,7 +136,7 @@ continue_run <- function(i){
 
 
     #Choose choice
-   command5 <- paste0("aichat --model openai:gpt-4o-mini --rag ddm based on the subjective and objective analyses from iteration ",i," choose a choice from the choices proposed in iteration ",i,". only return the chosen choice")
+   command5 <- paste0("aichat --model openai:gpt-4o-mini --rag ddm ",chosenPromptCustom)
    outputChosenChoice <- system(command5, intern = TRUE)
    cat(paste0("\nChoiceChosen_", i, ": \n", outputChosenChoice, "\n"), file="output.txt", append=TRUE)
 
@@ -138,7 +145,7 @@ continue_run <- function(i){
 
 
     #New Info
-   command6 <- paste0("aichat --model openai:gpt-4o-mini --rag ddm Considering that ALL previous choices were actualized, and the current choice made, summarize the newly acquired information from iteration ",i," given the analyses from iteration ",i," and the choice taken in iteration ",i,". Return your answer in plaintext and short.")
+   command6 <- paste0("aichat --model openai:gpt-4o-mini --rag ddm ",infoPromptCustom)
    outputNewInfo <- system(command6, intern = TRUE)
    cat(paste0("\nNewInfo_", i, ": \n", outputNewInfo, "\n"), file="output.txt", append=TRUE)
 
@@ -146,7 +153,7 @@ continue_run <- function(i){
   system("aichat --rag ddm --rebuild-rag", intern = TRUE)
 
   # New Goal
-  command7 <- paste0("aichat --model openai:gpt-4o-mini --rag ddm consider that the choice taken in iteration ",i-1," is accomplished, and we have chosen to do the choice in iteration ",i,", realign the new goal. return only the new goal")
+  command7 <- paste0("aichat --model openai:gpt-4o-mini --rag ddm ",newGoalPromptCustom)
   outputNewGoal <- system(command7, intern = TRUE)
   cat(paste0("\nNewGoal_", i, ": \n", outputNewGoal, "\n"), file="output.txt", append=TRUE)
 
@@ -180,6 +187,13 @@ continue_run <- function(i){
 }
 
 
+remove_parentheses <- function(text) {
+  gsub("[()]", "", text)
+}
+
+remove_quotes <- function(text) {
+  gsub("['\"]", "", text)
+}
 
 # Initial settings
 P <- 'I want to be a crypto billionaire'
@@ -192,18 +206,52 @@ sink()
 
 decision_log <-firstIteration()
 
-n = 15
+
+#decision_log <- readr::read_csv("./newMethod2.csv")
+
+
+n = 7
 
 for(i in 2:n){
+
+  choicePromptCustom = paste0("Consider NewGoal_",i-1," as the new goal. Consider ChoiceChosen_",i-1," as already accomplished.Propose new choices for iteration ",i,". The proposed choices should be different than previously made choices. Return the choices in plaintext. Only the choices. EXCLUDE: ",decision_log$choice_chosen %>% paste(collapse=" "))
+  choicePromptCustom = remove_parentheses(choicePromptCustom)
+  choicePromptCustom = remove_quotes(choicePromptCustom)
+  
+  subjectivePromptCustom = paste0("Consider NewGoal_",i-1," as the new goal. Consider ChoiceChosen_",i-1," as already accomplished. Subjectively analyze the choices proposed in D_",i,". Return the analysis in plaintext max 1 paragraph")
+  subjectivePromptCustom = remove_parentheses(subjectivePromptCustom)
+  subjectivePromptCustom = remove_quotes(subjectivePromptCustom)
+  
+  objectivePromptCustom = paste0("Consider NewGoal_",i-1," as the new goal. Consider ChoiceChosen_",i-1," as already accomplished. Objectively analyze the choices proposed in D_",i,". Return the analysis in plaintext max 1 paragraph")
+  objectivePromptCustom = remove_parentheses(objectivePromptCustom)
+  objectivePromptCustom = remove_quotes(objectivePromptCustom)
+  
+  chosenPromptCustom = paste0("Consider NewGoal_",i-1," as the new goal. Consider ChoiceChosen_",i-1," as already accomplished. Consider the analyses in Subjective Analysis_",i," and Objective Analysis_",i,". Choose one choice from D_",i,". Return ONLY the chosen choice and nothing else. The chosen choice must exclude all previously chosen choices. EXCLUDE: ",decision_log$choice_chosen %>% paste(collapse=" "))
+  chosenPromptCustom = remove_parentheses(chosenPromptCustom)
+  chosenPromptCustom = remove_quotes(chosenPromptCustom)
+  
+  infoPromptCustom = paste0("Consider NewGoal_",i-1," as the new goal. Consider ChoiceChosen_",i-1," as already accomplished. Consider the analyses in Subjective Analysis_",i," and Objective Analysis_",i,". Consider that the ChoiceChosen_",i,"has been chosen. Summarize the new information gained in iteration ",i,". Return back maximum 1 or 2 sentences in plaintext.")
+  infoPromptCustom = remove_parentheses(infoPromptCustom)
+  infoPromptCustom = remove_quotes(infoPromptCustom)
+  
+  newGoalPromptCustom = paste0("Consider NewGoal_",i-1," as having progressed onwards. Consider ChoiceChosen_",i," as the next choice taken. Consider new information gained in NewInfo_",i,". Realign your current goal to proceed progressively to the next step in achieving the master plan in P_1. Return only a single statement with the new goal. The new goal statement should differ from the previous NewGoal_",i-1," and differ from all previous new goals. EXCLUDE: ",decision_log$new_goal %>% paste(collapse=" "))
+  newGoalPromptCustom = remove_parentheses(newGoalPromptCustom)
+  newGoalPromptCustom = remove_quotes(newGoalPromptCustom)
+  
 
   copy <- createNewRow(i)
   decision_log <- rbind(decision_log,copy)
   #######################
-  newRow <- continue_run(i)
+  newRow <- continue_run(i=i,choicePromptCustom = choicePromptCustom,
+                         subjectivePromptCustom = subjectivePromptCustom,
+                         objectivePromptCustom = objectivePromptCustom,
+                         chosenPromptCustom = chosenPromptCustom,
+                         infoPromptCustom = infoPromptCustom,
+                         newGoalPromptCustom = newGoalPromptCustom)
   decision_log[i,] <- newRow
 
 }
 
-readr::write_csv(decision_log,'./newMethod1.csv')
+readr::write_csv(decision_log,'./newMethod5.csv')
 
 
