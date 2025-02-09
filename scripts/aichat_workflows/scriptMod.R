@@ -213,8 +213,8 @@ continue_run <- function(i, choicePromptCustom = NULL,
 
 
 # Initial settings
-P <- 'Plan a traditional Shabbat dinner for 7. Moroccan style. Focus on the cooking elements. The process should iterate and end up with a planned meal - only food focus'
-I <- 'I have access to a Kosher market with everything I need. I also have a nearby liquor store. I am only time-constrained because its Thursday night'
+P <- 'Plan a traditional Somali meal for Eid. 7 participants. Focus on the cooking elements. The process should iterate and end up with a planned meal - only food focus'
+I <- 'I have access to a traditional halal market with everything I need for meats and also a local Somali market for other things culture-specific like certain sweets like Xalwo and tea that u need to go to certain shops for. I am only time-constrained because its the night before the meal'
 
 decision_log <-firstIteration(P = P, I = I)
 
@@ -222,7 +222,7 @@ decision_log <-firstIteration(P = P, I = I)
 #decision_log <- readr::read_csv("./newMethod2.csv")
 
 
-n = 12
+n = 8
 
 for(i in 2:n){
 
@@ -264,6 +264,6 @@ for(i in 2:n){
 
 }
 
-readr::write_csv(decision_log,'./dinner.csv')
+readr::write_csv(decision_log,'./eid.csv')
 
 
