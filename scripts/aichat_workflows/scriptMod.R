@@ -222,7 +222,7 @@ decision_log <-firstIteration(P = P, I = I)
 #decision_log <- readr::read_csv("./newMethod2.csv")
 
 
-n = 5
+n = 12
 
 for(i in 2:n){
 
