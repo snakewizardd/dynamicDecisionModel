@@ -7,18 +7,16 @@ library(jsonlite)
 P_null = 'I want to be a crypto billionaire'
 
 sink("output.txt")
-cat(paste0("P_null: ",P_null))
+cat(paste0("P_1: ",P_null))
 sink()
 
 cat("\n",file="output.txt",append=TRUE, sep = '\n')
 
 
-I_0 = "I live in subsaharan africa in a shed with no internet and have only $35 to my name"
+I_1 = "I live in subsaharan africa in a shed with no internet and have only $35 to my name"
 
-cat(paste0("I_0: ",I_0),file="output.txt",append=TRUE, sep = '\n')
-
-
-cat(I_0,file="output.txt",append=TRUE, sep = '\n')
+cat("\nI_1: ",file="output.txt",append=TRUE, sep = '\n')
+cat(I_1,file="output.txt",append=TRUE, sep = '\n')
 
 #######SYNC RAG DB
 command2 <- "aichat --rag ddm --rebuild-rag"

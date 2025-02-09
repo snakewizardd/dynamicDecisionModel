@@ -1,26 +1,41 @@
-P_null: I want to be a crypto billionaire
+P_1: I want to be a crypto billionaire
 
-I_0: I live in subsaharan africa in a shed with no internet and have only $35 to my name
-I live in subsaharan africa in a shed with no internet and have only $35 to my name
+I_1: I live in Sub-Saharan Africa in a shed with no internet and have only $35 to my name
 
-D_1: 
-1. Find a way to access the internet and learn about cryptocurrency.
-2. Invest the $35 in a local business or opportunity to increase funds.
-3. Seek out online communities or forums related to cryptocurrency for guidance.
-4. Look for educational resources on cryptocurrency that can be accessed offline.
-5. Network with individuals in your area who have knowledge of cryptocurrency.
+
+D_1:1. Find a way to access the internet to research cryptocurrency opportunities. 2. Invest the $35 in a low-cost cryptocurrency or trading platform. 3. Seek out local community resources or groups focused on cryptocurrency education. 4. Explore online courses or tutorials that can be accessed offline to learn about cryptocurrency. 5. Look for part-time work or gigs to increase your initial capital for investment.
 
 Subjective Analysis_1: 
-Given my current situation of living in a shed in Sub-Saharan Africa with no internet and only $35 to my name, I need to consider my options carefully. After reflecting on the potential choices, I believe that finding a way to access the internet and learn about cryptocurrency is my best bet. Having internet access would open up a wealth of information and resources that could guide me in understanding cryptocurrency investing. It would also allow me to connect with online communities where I can seek advice and gain insights from experienced individuals in the field. This step would be crucial to building a foundation for my goal of becoming a crypto billionaire.
+Given my current situation living in a shed with no internet access and only $35 to my name, I feel that the best choice is to seek out local community resources or groups focused on cryptocurrency education. This choice aligns with my desire to become a crypto billionaire, as it allows me to gather valuable knowledge and connections without requiring significant upfront investment. By engaging with others who share my interest in cryptocurrency, I can learn from their experiences and potentially discover new opportunities that I might not find on my own.
 
 Objective Analysis_1: 
-Given my current situation living in Sub-Saharan Africa with only $35 and no internet, I need to be strategic about my next steps. An objective analysis of my potential choices suggests that finding a way to access the internet and learn about cryptocurrency would be the most beneficial option. This choice will enable me to tap into a wealth of information, insights, and resources that can help me understand the cryptocurrency landscape better. With knowledge as a foundation, I can then explore investment opportunities or network with experts in the field, ultimately increasing my chances of achieving my goal of becoming a crypto billionaire.
+Considering my current situation of living in Sub-Saharan Africa with limited resources, I believe my best option is to find a way to access the internet to research cryptocurrency opportunities. Gaining internet access will allow me to explore various avenues in cryptocurrency education, investment strategies, and community support, which are crucial for making informed decisions about becoming a crypto billionaire. This step seems vital for setting a solid foundation in my pursuit.
 
 ChoiceChosen_1: 
-Find a way to access the internet and learn about cryptocurrency.
+Find a way to access the internet to research cryptocurrency opportunities.
 
 NewInfo_1: 
-I have realized that accessing the internet is essential for learning about cryptocurrency and that it will provide me with the information and resources needed to pursue my goal of becoming a crypto billionaire.
+I_delta: The new information learned so far includes the necessity of accessing the internet to research cryptocurrency opportunities, as well as the importance of seeking local community resources or groups focused on cryptocurrency education to gather knowledge and connections, given the current limitations of living in a shed with no internet and only $35 available for investment.
 
 NewGoal_1: 
-Find a way to acquire a reliable internet connection to access educational resources on cryptocurrency.
+Access the internet to begin researching cryptocurrency opportunities and local community resources.
+
+D_2:Based on the newly declared goal of accessing the internet to research cryptocurrency opportunities, and considering that all previous choices have already been completed, here are the suggested next choices for this iteration:  1. Research local internet cafes or community centers that provide internet access for a low fee. 2. Utilize public libraries or other places where free internet access is available. 3. Join online forums or social media groups that focus on cryptocurrency, once internet access is established. 4. Identify reputable online resources, courses, and tutorials on cryptocurrency that can help build knowledge. 5. Connect with local cryptocurrency enthusiasts or attend meetups to gain insights and potential mentorship.  These choices focus on facilitating access to necessary information and community support in your pursuit of cryptocurrency opportunities.
+
+Subjective Analysis_2: 
+Based on the subjective analysis provided in the context, the best choice to advance the current goal in iteration 2 would be to seek out local community resources or groups focused on cryptocurrency education. This choice is seen as beneficial because it allows you to gather valuable knowledge and connections crucial for reaching your goal of becoming a crypto billionaire, especially given your current limitations with internet access and funds. Engaging with others who share your interest can enhance your learning and uncover new opportunities.
+
+Objective Analysis_2: 
+To advance your current goal of accessing the internet for cryptocurrency research in iteration 2, and considering all previous choices have been completed, the most objective choice would be:
+ 
+Objective Analysis_2: 
+
+ 
+Objective Analysis_2: 
+2. Utilize public libraries or other places where free internet access is available.
+ 
+Objective Analysis_2: 
+
+ 
+Objective Analysis_2: 
+This option is practical as it provides immediate access to the internet without incurring costs, allowing you to begin your research on cryptocurrency opportunities and connect with community resources effectively.
