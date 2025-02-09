@@ -10,7 +10,7 @@ plotData <- decision_log %>% mutate(iteration = 1:nrow(decision_log)) %>%
 
 # Wrapping text for better visibility
 plotData <- plotData %>%
-  mutate(adjusted_goal_wrapped = str_wrap(original_goal, width = 40)) 
+  mutate(adjusted_goal_wrapped = str_wrap(choice_chosen, width = 40)) 
 
 # Base plot
 p <- ggplot(plotData, aes(x = iteration, y = iteration)) +
@@ -29,7 +29,7 @@ p <- ggplot(plotData, aes(x = iteration, y = iteration)) +
 animated_plot <- p + transition_reveal(iteration)
 
 # Save animation
-anim_save("goal_progress2.gif", animated_plot)
+#anim_save("autoBiz.gif", animated_plot)
 
 # Show animation
 animated_plot

@@ -2,6 +2,16 @@ library(dplyr)
 library(httr)
 library(jsonlite)
 
+
+remove_parentheses <- function(text) {
+  gsub("[()]", "", text)
+}
+
+remove_quotes <- function(text) {
+  gsub("['\"]", "", text)
+}
+
+
 firstIteration <- function(i = 1, P, I){
   
   sink("output.txt")
@@ -45,15 +55,22 @@ cat(paste0("\nObjective Analysis_", i, ": \n", outputObjective, "\n"), file="out
   system("aichat --rag ddm --rebuild-rag", intern = TRUE)
 
   # New Info
-  command6 <- "aichat --model openai:gpt-4o-mini --rag ddm 'Summarize new information learned so far in iteration. Return only the text as I_delta. Plaintext 1 paragraph max.'"
-  outputNewInfo <- system(command6, intern = TRUE)
+  infoPromptCustom = paste0("aichat --model openai:gpt-4o-mini --rag ddm Consider P_1 goal. Consider the analyses in Subjective Analysis_",i," and Objective Analysis_",i,". Consider that the ChoiceChosen_",i,"has been chosen. Summarize the new information gained in iteration ",i,". Return back maximum 1 or 2 sentences in plaintext.")
+  #command6 <- "aichat --model openai:gpt-4o-mini --rag ddm 'Summarize new information learned so far in iteration. Return only the text as I_delta. Plaintext 1 paragraph max.'"
+  infoPromptCustom = remove_parentheses(infoPromptCustom)
+  infoPromptCustom = remove_quotes(infoPromptCustom)
+  outputNewInfo <- system(infoPromptCustom, intern = TRUE)
   cat(paste0("\nNewInfo_", i, ": \n", outputNewInfo, "\n"), file="output.txt", append=TRUE)
 
   # Sync RAG DB
   system("aichat --rag ddm --rebuild-rag", intern = TRUE)
 
   # New Goal
-  command7 <- "aichat --model openai:gpt-4o-mini --rag ddm 'Based on the information from this step, suggest a new goal for the next step. Return only the goal.'"
+  command7 <-paste0("aichat --model openai:gpt-4o-mini --rag ddm Consider P_1 as having progressed onwards. Consider ChoiceChosen_",i," as the next choice taken. Consider new information gained in NewInfo_",i,". Realign your current goal to proceed progressively to the next step in achieving the master plan in P_1. Return only a single statement with the new goal. The new goal statement should differ from the previous P_1")
+  #command7 <- "aichat --model openai:gpt-4o-mini --rag ddm 'Based on the information from this step, suggest a new goal for the next step. Return only the goal.'"
+  command7 <- remove_parentheses(command7)
+  command7 <- remove_quotes(command7)
+  
   outputNewGoal <- system(command7, intern = TRUE)
   cat(paste0("\nNewGoal_", i, ": \n", outputNewGoal, "\n"), file="output.txt", append=TRUE)
 
@@ -193,20 +210,28 @@ continue_run <- function(i, choicePromptCustom = NULL,
 }
 
 
-remove_parentheses <- function(text) {
-  gsub("[()]", "", text)
-}
 
-remove_quotes <- function(text) {
-  gsub("['\"]", "", text)
-}
 
 # Initial settings
-#P <- 'I want to be a crypto billionaire'
-#I <- "I live in Sub-Saharan Africa in a shed with no internet and have only $35 to my name"
+P <- 'I want to be a crypto billionaire'
+I <- "I live in Sub-Saharan Africa in a shed with no internet and have only $35 to my name"
 
-P <- "Optimize the Supply Chain Management System of XYZ Inc., a mid-sized e-commerce company, to Increase Customer Satisfaction and Reduce Shipping Times"
-I <- "XYZ Inc. has been experiencing a 25% increase in customer complaints regarding delayed shipments over the past six months, with an average shipping time of 7-10 business days, and a current supply chain management system that relies heavily on manual processing and lacks real-time inventory tracking."
+#P <- "Optimize the Supply Chain Management System of XYZ Inc., a mid-sized e-commerce company, to Increase Customer Satisfaction and Reduce Shipping Times"
+#I <- "XYZ Inc. has been experiencing a 25% increase in customer complaints regarding delayed shipments over the past six months, with an average shipping time of 7-10 business days, and a current supply chain management system that relies heavily on manual processing and lacks real-time inventory tracking."
+
+#P <- "Plot out a path to achieve AGI in 7 steps. Each step is 3 months long"
+#I <- "Consider the current state 2025 of transformers and AI"
+
+#P <- "The goal of the entire process is to respond to the incoming message in the tone of Walter Bishop"
+
+#I <- "The first message is 'Hey walter wtf u think about ETH bro'"
+
+#P <- "Achieve success in the project"
+#I <- "The project I’m working on is all about designing a scalable and fault-tolerant distributed system that can handle massive amounts of data and traffic. The goal is to ensure that the system stays consistent, reliable, and available, even when things go wrong. I’m trying to strike the right balance between performance, data consistency, and availability, all while building something that can withstand potential failures and keep running smoothly no matter what. It's a tricky challenge, but the end result would be a robust system that can grow and scale with the needs of the business."
+
+#P <- "Build a highly available, fault-tolerant microservices architecture that can dynamically scale based on traffic demands, while optimizing for low-latency communication between services."
+#I <- "Begin by implementing a basic microservices framework using Docker containers, with services communicating through REST APIs over HTTP."
+
 
 decision_log <-firstIteration(P = P, I = I)
 
@@ -214,7 +239,7 @@ decision_log <-firstIteration(P = P, I = I)
 #decision_log <- readr::read_csv("./newMethod2.csv")
 
 
-n = 5
+n = 15
 
 for(i in 2:n){
 
@@ -256,6 +281,6 @@ for(i in 2:n){
 
 }
 
-readr::write_csv(decision_log,'./xyzInc2.csv')
+readr::write_csv(decision_log,'./cryptoTest.csv')
 
 
