@@ -213,25 +213,8 @@ continue_run <- function(i, choicePromptCustom = NULL,
 
 
 # Initial settings
-P <- 'I want to be a crypto billionaire'
-I <- "I live in Sub-Saharan Africa in a shed with no internet and have only $35 to my name"
-
-#P <- "Optimize the Supply Chain Management System of XYZ Inc., a mid-sized e-commerce company, to Increase Customer Satisfaction and Reduce Shipping Times"
-#I <- "XYZ Inc. has been experiencing a 25% increase in customer complaints regarding delayed shipments over the past six months, with an average shipping time of 7-10 business days, and a current supply chain management system that relies heavily on manual processing and lacks real-time inventory tracking."
-
-#P <- "Plot out a path to achieve AGI in 7 steps. Each step is 3 months long"
-#I <- "Consider the current state 2025 of transformers and AI"
-
-#P <- "The goal of the entire process is to respond to the incoming message in the tone of Walter Bishop"
-
-#I <- "The first message is 'Hey walter wtf u think about ETH bro'"
-
-#P <- "Achieve success in the project"
-#I <- "The project I’m working on is all about designing a scalable and fault-tolerant distributed system that can handle massive amounts of data and traffic. The goal is to ensure that the system stays consistent, reliable, and available, even when things go wrong. I’m trying to strike the right balance between performance, data consistency, and availability, all while building something that can withstand potential failures and keep running smoothly no matter what. It's a tricky challenge, but the end result would be a robust system that can grow and scale with the needs of the business."
-
-#P <- "Build a highly available, fault-tolerant microservices architecture that can dynamically scale based on traffic demands, while optimizing for low-latency communication between services."
-#I <- "Begin by implementing a basic microservices framework using Docker containers, with services communicating through REST APIs over HTTP."
-
+P <- 'Plan a traditional Shabbat dinner for 7. Moroccan style. Focus on the cooking elements. The process should iterate and end up with a planned meal - only food focus'
+I <- 'I have access to a Kosher market with everything I need. I also have a nearby liquor store. I am only time-constrained because its Thursday night'
 
 decision_log <-firstIteration(P = P, I = I)
 
@@ -239,11 +222,11 @@ decision_log <-firstIteration(P = P, I = I)
 #decision_log <- readr::read_csv("./newMethod2.csv")
 
 
-n = 15
+n = 5
 
 for(i in 2:n){
 
-  choicePromptCustom = paste0("Consider NewGoal_",i-1," as the new goal. Consider ChoiceChosen_",i-1," as already accomplished.Propose new choices for iteration ",i,". The proposed choices should be different than previously made choices. Return the choices in plaintext. Only the choices. EXCLUDE: ",decision_log$choice_chosen %>% paste(collapse=" "))
+  choicePromptCustom = paste0("Consider NewGoal_",i-1," as the new goal. Consider ChoiceChosen_",i-1," as already accomplished.Propose new choices for iteration ",i,". The proposed choices should be different than previously made choices. Return the choices in plaintext. Only the choices. EXCLUDE: ",decision_log$choice_chosen %>% paste(collapse=" ")," Ensure that the new goal is still  very much aligned with the overarching goal of P_1 and in fact is an iterative process related to P_1. The goal should proceed from NewGoal_",i," and ChosenChoice_",i)
   choicePromptCustom = remove_parentheses(choicePromptCustom)
   choicePromptCustom = remove_quotes(choicePromptCustom)
   
@@ -259,11 +242,11 @@ for(i in 2:n){
   chosenPromptCustom = remove_parentheses(chosenPromptCustom)
   chosenPromptCustom = remove_quotes(chosenPromptCustom)
   
-  infoPromptCustom = paste0("Consider NewGoal_",i-1," as the new goal. Consider ChoiceChosen_",i-1," as already accomplished. Consider the analyses in Subjective Analysis_",i," and Objective Analysis_",i,". Consider that the ChoiceChosen_",i,"has been chosen. Summarize the new information gained in iteration ",i,". Return back maximum 1 or 2 sentences in plaintext.")
+  infoPromptCustom = paste0("Consider NewGoal_",i-1," as the new goal. Consider ChoiceChosen_",i-1," as already accomplished. Consider the analyses in Subjective Analysis_",i," and Objective Analysis_",i,". Consider that the ChoiceChosen_",i,"has been chosen as the next step. Summarize the new information gained from considering choices D_",i," and determining to choose ChoiceChosen_",i," Return back maximum 1 or 2 sentences in plaintext.")
   infoPromptCustom = remove_parentheses(infoPromptCustom)
   infoPromptCustom = remove_quotes(infoPromptCustom)
   
-  newGoalPromptCustom = paste0("Consider NewGoal_",i-1," as having progressed onwards. Consider ChoiceChosen_",i," as the next choice taken. Consider new information gained in NewInfo_",i,". Realign your current goal to proceed progressively to the next step in achieving the master plan in P_1. Return only a single statement with the new goal. The new goal statement should differ from the previous NewGoal_",i-1," and differ from all previous new goals. EXCLUDE: ",decision_log$new_goal %>% paste(collapse=" "))
+  newGoalPromptCustom = paste0("Consider NewGoal_",i-1," as having progressed onwards. Consider ChoiceChosen_",i," as the next choice taken. Consider new information gained in NewInfo_",i,". Realign your current goal to proceed progressively to the next step in achieving the master plan in P_1. Return only a single statement with the new goal. The new goal statement should differ from the previous NewGoal_",i-1," and differ from all previous new goals. EXCLUDE: ",decision_log$new_goal %>% paste(collapse=" "),". However, the new goal should be a refined progress from NewGoal_",i-1, " and logically proceed towards the grand goal of P_1.")
   newGoalPromptCustom = remove_parentheses(newGoalPromptCustom)
   newGoalPromptCustom = remove_quotes(newGoalPromptCustom)
   
@@ -281,6 +264,6 @@ for(i in 2:n){
 
 }
 
-readr::write_csv(decision_log,'./cryptoTest.csv')
+readr::write_csv(decision_log,'./dinner.csv')
 
 

@@ -47,7 +47,7 @@ animated_plot <- p + transition_reveal(iteration) +
 
 # Save animation
 animation <- animate(animated_plot, height = 800, width = 1200, units = "px", res = 100, duration = 10, fps = 20)  # Increased height and width
-anim_save("cryptoTest.gif", animation)
+anim_save("meal.gif", animation)
 
 # Show animation
-#animation
+animation
