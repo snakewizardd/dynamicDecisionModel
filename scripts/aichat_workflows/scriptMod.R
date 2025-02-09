@@ -2,13 +2,19 @@ library(dplyr)
 library(httr)
 library(jsonlite)
 
-firstIteration <- function(i = 1){
-
+firstIteration <- function(i = 1, P, I){
+  
+  sink("output.txt")
+  cat(paste0("P_1: ", P, "\n\n"))
+  cat(paste0("I_1: ", I, "\n\n"))
+  sink()
+  
+  
   # Sync RAG DB
   system("aichat --rag ddm --rebuild-rag", intern = TRUE)
 
   # Suggest choices
-  command <- "aichat --model openai:gpt-4o-mini --rag ddm --role choiceGenerator 'Suggest the possible choices for this iteration. Return only the choices in plaintext'"
+  command <- "aichat --model openai:gpt-4o-mini --rag ddm --role choiceGenerator 'Suggest the possible choices to consider given P_1 and I_1. Return only the choices in plaintext'"
   outputChoices <- system(command, intern = TRUE)
   cat(paste0("\nD_", i, ":"), file="output.txt", append=TRUE)
   cat(outputChoices, file="output.txt", append=TRUE)
@@ -196,21 +202,19 @@ remove_quotes <- function(text) {
 }
 
 # Initial settings
-P <- 'I want to be a crypto billionaire'
-I <- "I live in Sub-Saharan Africa in a shed with no internet and have only $35 to my name"
+#P <- 'I want to be a crypto billionaire'
+#I <- "I live in Sub-Saharan Africa in a shed with no internet and have only $35 to my name"
 
-sink("output.txt")
-cat(paste0("P_1: ", P, "\n\n"))
-cat(paste0("I_1: ", I, "\n\n"))
-sink()
+P <- "Optimize the Supply Chain Management System of XYZ Inc., a mid-sized e-commerce company, to Increase Customer Satisfaction and Reduce Shipping Times"
+I <- "XYZ Inc. has been experiencing a 25% increase in customer complaints regarding delayed shipments over the past six months, with an average shipping time of 7-10 business days, and a current supply chain management system that relies heavily on manual processing and lacks real-time inventory tracking."
 
-decision_log <-firstIteration()
+decision_log <-firstIteration(P = P, I = I)
 
 
 #decision_log <- readr::read_csv("./newMethod2.csv")
 
 
-n = 7
+n = 5
 
 for(i in 2:n){
 
@@ -252,6 +256,6 @@ for(i in 2:n){
 
 }
 
-readr::write_csv(decision_log,'./newMethod5.csv')
+readr::write_csv(decision_log,'./xyzInc2.csv')
 
 
